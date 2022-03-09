@@ -1,3 +1,5 @@
+//simple code for learn funciton scope and block scope
+
 #include<stdio.h>
 int main()
 { 		//function scope start
