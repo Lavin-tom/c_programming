@@ -16,7 +16,7 @@ int main()
 	printf("enter the character\n");
 	scanf(" %c",&ch);
 
-	//predifined function for find the occurance of chara in a string
+	//predefined function for find the occurance of chara in a string
 	r=strrchr(a,ch);
 	start=a;
 	value=((r-start)/sizeof(a[0]));
@@ -27,28 +27,27 @@ int main()
 	length=strlen_user(a);
 	strrchr_user(a,ch,length);
 }
+//user function for find the length of string
 int strlen_user(char *a)
 {
 	int i;
 	for(i=0;a[i];i++);
 	return i;
 }
+//user function for find the last occurance
 void strrchr_user(char *a,char b,int length)
 {
 	int i;
 	//checking the value of a[i] to b[i] using a for loop
-	for(i=length-1;a[0];i--)
+	for(i=length-1;i>=0;i--)
 	{
 		if(a[i]==b)
 		{
-			printf("%c %c ",a[i],b);
 			printf("by using userdefined function last occurance of %c is in %s at the index position %d\n",b,a,i);
 			break;
 		}
 	}
-
-	//every string is end with /0
-	//if(a[i]=='\0')
-	if(i==0)
+	//after the for loop it value will be less than 0
+	if(i<0)
 	printf("using user defined function %c not found! in %s\n",b,a);
 }
