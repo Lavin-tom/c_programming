@@ -13,11 +13,11 @@ int main()
 	printf("enter the no\n");
 	scanf("%d",&n);
 
-	//predifined function for copying one string to another string
+	//predefined function for copying one string to another string
 	strncpy(b,a,n);
 	printf("after copying string b taken %d as value using predefined function %s\n",n,b);
-	strcpy_n_user(a,b,n);
-	printf("after copying string b taken %d as value using userdefined function %s\n",n,b);
+//	strcpy_n_user(a,b,n);
+//	printf("after copying string b taken %d as value using userdefined function %s\n",n,b);
 }
 void strcpy_n_user(char *a,char *b,int n)
 {
