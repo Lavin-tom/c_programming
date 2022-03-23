@@ -3,11 +3,12 @@
 //command line argument/load time input
 
 #include<stdio.h>
+#include<stdlib.h>
 #include<math.h>
-int user_atof(char *argv[]);
-int find_dpoint(char *argv[]);
-int find_fraction(char *argv[],int decimel);
-int count_fraction(char *argv[],int decimel);
+//int user_atof(char *argv);
+int find_dpoint(char *argv);
+//int find_fraction(char *argv,int decimel);
+//int count_fraction(char *argv,int decimel);
 int main(int argc,char *argv[])
 {
 	float res=0,result=0,value;
@@ -17,19 +18,19 @@ int main(int argc,char *argv[])
 	if(argc!=2)
 	{
 		printf("string is not entered along with a.out\n");
-		return 0;
+		return;
 	}
 	else
 	{
-		decimel=find_dpoint(argv);
+		decimel=find_dpoint(argv[1]);
 		//printf("decimel %d\n",decimel);
-		res=user_atof(argv);
+		res=user_atof(argv[1]);
 		
 		printf("res %f\n",res);
-		fraction=find_fraction(argv,decimel);
+		fraction=find_fraction(argv[1],decimel);
 
 		//printf("fraction %f\n",fraction);
-		count=count_fraction(argv,decimel);
+		count=count_fraction(argv[1],decimel);
 
 		value=pow(10,-count);
 
@@ -40,20 +41,20 @@ int main(int argc,char *argv[])
 		result=res+fraction_value;
 
 		//printf("fraction_value %f\n",fraction_value);
-		if(argv[1][0]=='-')
+		if(argv[0]=='-')
 		result=-result;	
 		printf("final value of atof is %f\n",result);
 	}
 }
 //count the fraction no
-int count_fraction(char *argv[],int decimel)
+int count_fraction(char *argv,int decimel)
 {
 	int i,n,count=0;
-	for(i=decimel;argv[1][i];i++)
+	for(i=decimel;argv[i];i++)
 	{
-		if(argv[1][i]>= '0' && argv[1][i]<='9')
+		if(argv[i]>= '0' && argv[i]<='9')
 		{
-			n=n*10+(argv[1][i]-48);
+			n=n*10+(argv[i]-48);
 			count++;
 		}
 
@@ -61,30 +62,30 @@ int count_fraction(char *argv[],int decimel)
 	return count;
 }
 //to get the fraction no
-int find_fraction(char *argv[],int decimel)
+int find_fraction(char *argv,int decimel)
 {
 	int i,n;
-	for(i=decimel;argv[1][i];i++)
+	for(i=decimel;argv[i];i++)
 	{
-		if(argv[1][i]>= '0' && argv[1][i]<='9')
+		if(argv[i]>= '0' && argv[i]<='9')
 		{
-			n=n*10+(argv[1][i]-48);
+			n=n*10+(argv[i]-48);
 		}
 
 	}
 	return n;
 }
 //function for decimal point index value
-int find_dpoint(char *argv[])
+int find_dpoint(char *argv)
 {
 	int i=0;
-	if(argv[1][0]=='-')
+	if(argv[0]=='-')
 	{
 		i=1;
 	}
-	for( ;argv[1][i];i++)
+	for( ;argv[i];i++)
 	{
-		if(argv[1][i]=='.')
+		if(argv[i]=='.')
 		{
 		return i;
 		break;
@@ -93,24 +94,24 @@ int find_dpoint(char *argv[])
 
 }
 //get the integer value before decimal point
-int user_atof(char *argv[])
+int user_atof(char *argv)
 {
 	int i=0,n=0;
-	if(argv[1][0]=='-')
+	if(argv[0]=='-')
 	{
 		i=1;
 	}
-	for( ;argv[1][i]!='.';i++)
+	for( ;argv[i]!='.';i++)
 	{
-		if(argv[1][i]>='0' && argv[1][i]<='9')
+		if(argv[i]>='0' && argv[i]<='9')
 		{
-			n=n*10+(argv[1][i]-48);
+			n=n*10+(argv[i]-48);
 		}
-		if(argv[1][i]=='.')
+		if(argv[i]=='.')
 			break;
 
 	}
-	if(argv[1][0]!='-')
+	if(argv[0]!='-')
 	return n;
 	else
 	{
