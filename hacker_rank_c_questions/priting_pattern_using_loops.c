@@ -13,22 +13,30 @@
 #include<stdio.h>
 int main()
 {
-	int n,i,k,j;
+	int n,i,j;
 	scanf("%d",&n);
-
-	for(i=0;i<n*2-1;i++)
+	
+	int k=2*n-1;
+	int a[k][k];
+	for(i=0;i<n;i++)
 	{
-		for(j=0;j<n*2-1;j++)
+		for(j=i;j<k-i;j++)
 		{
-			if(i==0 || j==0 || j==n*2-2 || i==n*2-2 )
-			printf("%d ",n);
-			else if(i==1 || j==1 || j==n*2-3 || i==n*2-3 )
-			printf("%d ",n-1);
-			else if(i==2 || j==2 || j==n*2-4 || i==n*2-4 )
-			printf("%d ",n-2);
-			else
-			printf("1 ");
+			//for upper row
+			a[i][j]= n-i;
+			//for bottom row
+			a[2*n-2-i][j]=n-i;
+			//left column
+			a[j][i]=n-i;
+			//right column
+			a[j][2*n-2-i]=n-i;
 		}
+	}
+	//printing of 2 D array
+	for(i=0;i<k;i++)
+	{
+		for(j=0;j<k;j++)
+		printf("%d ",a[i][j]);           
 		printf("\n");
 	}
 }
