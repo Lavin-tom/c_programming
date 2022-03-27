@@ -4,18 +4,23 @@
 
 int next_permutation(int n, char **s)
 {
-	int i,j;
-	char str_temp[n];
-	str_temp[0]=s[n];
-	for(i=0;i<n;i++)
-	{
-		printf("printing inside the loop %s\n",s[i-1]);
-		str_temp[i+0]=s[i];	
-	}
-	str_temp[i]='\0';
-	printf("%s\n",str_temp);
-	return 0;
+	int i,j,l;
+	char str_temp[3][5];
 
+	for(i=1,j=0;i<3;i++,j++)
+	{
+		strcpy(str_temp[i],s[j]);
+	}
+	for(i=0,j=3-1;i<3;i++,j++)
+	{
+		strcpy(str_temp[i],s[j]);
+	}
+	for(i=0;i<3;i++)
+	{
+		printf("%s",str_temp[i]);
+	}
+
+	return 0;
 }
 
 int main()
