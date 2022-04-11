@@ -18,7 +18,7 @@ int main()
 		printf("%d",n>>i&1);
 	}
 	printf("\nafter complement the bit\n");
-	n=n|(1<<bp);
+	n=n^(1<<bp);
 	for(int i=7;i>=0;i--)
 	{
 		printf("%d",n>>i&1);
