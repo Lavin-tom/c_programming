@@ -15,6 +15,7 @@ int main()
 	if(fp==NULL)
 	{
 		printf("file not opened\n");
+		return 0;
 	}
 	struct student v1[5],v2[5];
 
@@ -27,9 +28,26 @@ int main()
 	printf("enter student mark\n");
 	scanf("%f",&v1[i].marks);
 	}
+	
+	//sorting the records based on roll no, name and marks
+	//according to user choice
+
 	printf("student data writing into file\n");
 	sleep(3);
+
 	for(int i=0;i<5;i++)
 	fprintf(fp,"%d %s %f\n",v1[i].r,v1[i].name,v1[i].marks);
-	printf("writing data completed\n");
+	rewind(fp);
+
+	printf("writing data into file completed..\n");
+	sleep(3);
+
+	printf("reading data form file..\n");
+	for(int i=0;i<5;i++)
+	fscanf(fp,"%d %s %f\n",&v2[i].r,v2[i].name,&v2[i].marks);
+	sleep(3);
+
+	printf("data after reading from file..\n");
+	for(int i=0;i<5;i++)
+	printf("%d %s %f\n",v2[i].r,v2[i].name,v2[i].marks);
 }
