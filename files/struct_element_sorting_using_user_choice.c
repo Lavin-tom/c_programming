@@ -10,6 +10,7 @@
 	};
 int main()
 {
+	int op;
 	FILE *fp;
 	fp=fopen("temp","w+");
 	if(fp==NULL)
@@ -31,6 +32,19 @@ int main()
 	
 	//sorting the records based on roll no, name and marks
 	//according to user choice
+	printf("select any option\n");
+	print("1.based on roll no\n2. based on name\n3. base on marks\n");
+     	scanf("%d",&op);
+	
+	switch (op)
+	{
+		case 1 :
+			break;
+		case 2 :
+			break;
+		case 3 :
+			break;
+	}	
 
 	printf("student data writing into file\n");
 	sleep(3);
