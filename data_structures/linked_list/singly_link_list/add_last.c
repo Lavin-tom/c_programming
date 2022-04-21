@@ -1,8 +1,13 @@
 //singly linked list 
 //Add at last
+//Display
+//Delete first
+//Save datas as a file
+//Sync data from file
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 struct student
 {
 	int roll;
@@ -14,10 +19,12 @@ struct student *add_last(struct student*);
 void display(struct student*);
 struct student *del_first(struct student*);
 void save(struct student*);
+struct student *syncfromfile(struct student*);
 int main()
 {
 	struct student *head=NULL;
 	int choice;
+	head=syncfromfile(head);			//sync file before appear option ,every time execute the prgm to sync the file
 	while(1)
 	{
 		printf("enter your choice\n");
@@ -79,8 +86,8 @@ struct student * add_last(struct student *ptr)
 			//temp is at last node
 			temp->link=newnode;		//linking new node to last node
 		}
-		return ptr;
 	}
+	return ptr;
 }
 
 //display the details of student
@@ -145,7 +152,54 @@ void save(struct student *ptr)
 				fwrite(ptr,size,1,fp);
 				ptr=ptr->link;
 			}
+			fclose(fp);
 		}
-		fclose(fp);
 	}
+}
+//sync file 
+struct student *syncfromfile(struct student *ptr)
+{
+	struct student *newnode=NULL,*temp=NULL;
+	struct student var;
+	long long int size=sizeof(struct student)-sizeof(struct student *);
+	FILE *fp;
+	fp=fopen("student.txt","r");
+	if(fp==NULL)
+	{
+		//if file not contain any value,return pointer
+		return ptr;
+	}	
+	//file existing and contains some data
+	while(fread(&var,size,1,fp)==1)
+	{
+		//create a node
+		newnode=calloc(1,sizeof(struct student));
+			if(newnode==NULL)
+			{
+				printf("node not created\n");
+			}
+			else
+			{
+				newnode->roll=var.roll;
+				strcpy(newnode->name,var.name);
+				newnode->marks=var.marks;
+				if(ptr==NULL) 	//if list is empty
+				{
+					ptr=newnode;		//adding as first node
+				}
+				else
+				{
+					temp=ptr;
+					//transversing to last node
+					while(temp->link!=NULL)
+					{
+						temp=temp->link;
+					}
+					temp->link=newnode;		//linking newnode to last node
+				}
+			}
+	}
+
+	fclose(fp);
+	return ptr;
 }
