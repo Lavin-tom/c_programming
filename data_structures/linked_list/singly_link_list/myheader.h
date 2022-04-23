@@ -1,3 +1,6 @@
+//multiple file compilation
+//headerfile
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -6,7 +9,7 @@ struct Student
 int roll;
 char name[20];
 float marks;
-struct Student *link;
+struct Student *link;		//self referencial pointer
 };
 
 struct Student  * Add_sorted(struct Student *);
