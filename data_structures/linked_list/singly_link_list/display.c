@@ -1,5 +1,5 @@
 //display.c
-//multiple file compilation
+//display function in multiple file compilation
 
 #include "myheader.h"
 

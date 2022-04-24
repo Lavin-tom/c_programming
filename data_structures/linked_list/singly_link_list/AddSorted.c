@@ -6,6 +6,7 @@
 struct Student *Add_sorted(struct Student *ptr)
 {
 	struct Student *newnode=NULL,*temp=NULL,*prev=NULL;
+	//dynamic memory allocation
 	newnode=calloc(1,sizeof(struct Student));
 	if(newnode==NULL)
 	{
