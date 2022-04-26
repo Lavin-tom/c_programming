@@ -53,7 +53,7 @@ struct student * add_last(struct student *ptr)
 	newnode=(struct student *)calloc(1,sizeof(struct student));
 	if(newnode==NULL)
 	{
-		printf("Not not created\n");
+		printf("Node not created\n");
 	}
 	else
 	{
