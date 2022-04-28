@@ -14,7 +14,7 @@ void display_prime(struct student *ptr)
 		{
 			k=ptr->roll;
 			count=0;
-			for(int i=2;i<k/2;i++)
+			for(int i=2;i<=k/2;i++)
 			{
 				if(k%i==0)
 					count++;

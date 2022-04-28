@@ -4,7 +4,6 @@
 struct student *add_list(struct student *ptr)
 {
 	struct student *newnode=NULL,*temp=NULL;
-	//dma
 	newnode=(struct student *)calloc(1,sizeof(struct student));
 
 	if(newnode==NULL)
