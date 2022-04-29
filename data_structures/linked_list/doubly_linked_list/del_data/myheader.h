@@ -14,3 +14,4 @@ struct student
 struct student *add_last (struct student *);
 struct student *del_data (struct student *);
 void display(struct student *);
+struct student *del_first (struct student *);
