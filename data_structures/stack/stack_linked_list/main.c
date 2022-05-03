@@ -7,21 +7,21 @@ int main()
 	struct stack *top=NULL;
 	while(1)
 	{
-	printf("choose any option\n");
-	printf("1.push 2.pop 3.peek 4.exit\n");
+	printf("\nchoose any option\n");
+	printf("1.push 2.pop 3.peek 4.display 5.exit\n");
 	scanf("%d",&option);
 
 	switch(option)
 	{
 		case 1:	top=push(top);
 			break;
-	//	case 2: top=pop(top);
-	//		break;
-	//	case 3: top=peek(top);
-	//		break;
-		case 5: display(top);
+		case 2: top=pop(top);
+			break;
+		case 3: top=peek(top);
+			break;
+		case 4: display(top);
        			break;		       
-		case 4: exit(0);
+		case 5: exit(0);
 	}
 	}
 }

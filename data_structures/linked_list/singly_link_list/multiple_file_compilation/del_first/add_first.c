@@ -1,18 +1,18 @@
-//push.c
-//push - last in first out 
+//add_first.c
 
 #include"myheader.h"
-struct stack *push(struct stack *ptr)
+
+struct student *add_first(struct student *ptr)
 {
-	struct stack *newnode=NULL,*temp=NULL;
-	newnode=(struct stack*)calloc(1,sizeof(struct stack));
+	struct student *newnode=NULL,*temp=NULL;
+	newnode=(struct student*)calloc(1,sizeof(struct student));
 	if(newnode==NULL)
 	{
-		printf("\nstack is full\n");
+		printf("node not created\n");
 	}
 	else
 	{
-		printf("enter the data\n");
+		printf("enter data\n");
 		scanf("%d",&newnode->data);
 
 		if(ptr==NULL)
@@ -28,6 +28,7 @@ struct stack *push(struct stack *ptr)
 			}
 			newnode->link=ptr;
 			ptr=newnode;
+
 		}
 	}
 	return ptr;

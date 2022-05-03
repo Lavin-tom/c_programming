@@ -1,16 +1,15 @@
 //dispaly -for debug
 
 #include"myheader.h"
-void display (struct stack *ptr)
+void display (struct student *ptr)
 {
-	struct stack *temp=NULL;
+	struct student *temp=NULL;
 	if(ptr==NULL)
 	{
-		printf("\nstack is empty\n");
+		printf("\nList is empty\n");
 	}
 	else
 	{
-		printf("\nstack\n");
 		temp=ptr;
 		while(temp)
 		{
