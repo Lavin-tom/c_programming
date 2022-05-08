@@ -1,5 +1,6 @@
 //circular queue
 //used when leftshifting consume more time.
+//some bugs are there. not yet completed.
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -8,7 +9,7 @@ int queue[max];
 int front=-1;
 int rear=-1;
 void enque(int);
-void deque();
+int deque();
 void display();
 
 int main()
@@ -24,11 +25,12 @@ int main()
 		{
 			case 1: printf("enter data to add queue\n");
 				scanf("%d",&data);
-				if(front==-1)
-					front++;
 				enque(data);
 				break;
-			case 2: deque();
+			case 2: if(front==-1)
+					printf("Queue is empty\n");
+				else
+					printf("data dequed is %d\n",deque());
 				break;
 			case 3: display();
 				break;
@@ -40,36 +42,32 @@ int main()
 //enque function
 void enque(int data)
 {
-	if((front==0 && rear==max-1))// || (front==rear+1)  )
-		printf("adding not possible,queue is full\n");
+	if((front==0 && rear==max-1) || (front==rear+1))
+	{
+		printf("Queue is full\n");
+		if((front==0 && rear==max-1))
+		rear=-1;
+	}
 	else
 	{
-		if(rear==max-1)
+		if(front==-1)//if queue is empty
 		{
-			front=-1;
-			rear=-1;
+			front++;
 		}
 		queue[++rear]=data;
 	}
 }
 
 //deque function
-void deque()
+int deque()
 {
-	if(rear==-1)
+	int temp;
+	temp=queue[front++];
+	if(front==max-1)
 	{
-		printf("queue is empty\n");
-		rear=-1;
 		front=-1;
 	}
-	else
-	{
-		printf("%d is poped out\n",queue[front]);
-		//queue[front]=0;
-		//front++;
-		rear=front-1;
-		front++;
-	}
+	return temp;
 }
 
 //display funcition
