@@ -1,6 +1,5 @@
 //circular queue
 //used when leftshifting consume more time.
-//some bugs are there. not yet completed.
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -42,19 +41,16 @@ int main()
 //enque function
 void enque(int data)
 {
-	if((front==0 && rear==max-1) || (front==rear+1))
-	{
+	if(front==rear+1)
 		printf("Queue is full\n");
-		if((front==0 && rear==max-1))
-		rear=-1;
-	}
 	else
 	{
 		if(front==-1)//if queue is empty
-		{
 			front++;
-		}
 		queue[++rear]=data;
+		//after reaching last node again pointing to the first node
+		if(rear==max-1)
+			rear=-1;
 	}
 }
 
@@ -63,14 +59,14 @@ int deque()
 {
 	int temp;
 	temp=queue[front++];
-	if(front==max-1)
-	{
-		front=-1;
-	}
+	if((front==max) && (rear>-1))
+			front=0;
+	else if((front==max) || (front==rear+1))
+		front=rear=-1;
 	return temp;
 }
 
-//display funcition
+//display function for debuging
 void display()
 {
 	if(front==-1 && rear==-1)
