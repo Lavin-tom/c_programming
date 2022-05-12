@@ -15,8 +15,8 @@ struct bts
 
 struct bts *insert(struct bts *,int);
 struct bts *preorder(struct bts *);
-//struct bts *postorder(struct bts *);
-//struct bts *inorder(struct bts *);
+struct bts *postorder(struct bts *);
+struct bts *inorder(struct bts *);
 
 int main()
 {
@@ -35,10 +35,10 @@ int main()
 				break;
 			case 2: root=preorder(root);
 				break;
-			//case 3: root=postorder(root):;
-			//	break;
-			//case 4: root=inorder(root);
-			//	break;
+			case 3: root=postorder(root);
+				break;
+			case 4: root=inorder(root);
+				break;
 			case 5: exit(0);
 		}
 	}
@@ -47,17 +47,17 @@ int main()
 //insert
 struct bts *insert(struct bts *ptr,int d)
 {
-	struct bts *newnode=NULL;
-	newnode=(struct bts*)calloc(1,sizeof(struct bts));
-	if(newnode==NULL)
+	struct bts *root=NULL;
+	root=(struct bts*)calloc(1,sizeof(struct bts));
+	if(root==NULL)
 		printf("node not created\n");
 	else
 	{
 		if(ptr==NULL)
 		{
-			newnode=ptr;
-			//ptr->left=NULL;
-			//ptr->right=NULL;
+			ptr=root;
+			root->left=NULL;
+			root->right=NULL;
 		}
 		else
 		{	
@@ -87,4 +87,34 @@ struct bts *preorder(struct bts *ptr)
 		preorder(ptr->right);
 	}
 	return ptr;
+}
+
+//postorder
+//left right root
+struct bts *postorder(struct bts *ptr)
+{
+	if(ptr==NULL)
+		printf("tree is empty\n");
+	else
+	{
+		postorder(ptr->left);
+		postorder(ptr->right);
+		printf("%d ",ptr->data);
+	}
+	return ptr;
+}
+
+//inorder
+//left root right
+struct bts *inorder(struct bts *ptr)
+{
+        if(ptr==NULL)
+                printf("tree is empty\n");
+        else
+        {
+		inorder(ptr->left);
+                printf("%d ",ptr->data);
+                inorder(ptr->right);
+        }
+        return ptr;
 }
