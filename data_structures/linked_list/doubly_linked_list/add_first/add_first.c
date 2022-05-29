@@ -1,4 +1,4 @@
-//add_last.c
+//add_first.c
 
 #include"myheader.h"
 

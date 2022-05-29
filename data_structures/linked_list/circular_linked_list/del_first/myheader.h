@@ -10,6 +10,6 @@ struct student
 	struct student *link;
 };
 
-struct student *add_first(struct student *);
+struct student *add_last(struct student *);
 void display(struct student *);
 

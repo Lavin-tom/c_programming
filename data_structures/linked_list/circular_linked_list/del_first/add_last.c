@@ -2,7 +2,7 @@
 
 #include"myheader.h"
 
-struct student *add_first(struct student *ptr)
+struct student *add_last(struct student *ptr)
 {
 	struct student *newnode=NULL,*temp=NULL;
 	newnode=(struct student*)calloc(1,sizeof(struct student));
