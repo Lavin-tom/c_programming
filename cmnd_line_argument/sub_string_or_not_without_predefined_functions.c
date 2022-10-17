@@ -23,14 +23,10 @@ int main(int argc,char *argv[])
 
 	printf("%d %d\n",str1_length,str2_length);
 
-	for(int i=0;argv[1][i];i++);
-	{
-		for(int j=0;argv[2][j];j++)
-		{
-			if(argv[1][i]==argv[2][j])
-			{
-				printf("%d\n",strncmp(argv[1],argv[2],str1_length));
-			}
-		}
-	}
+	int r=strncmp(argv[1],argv[2],str1_length);
+	printf("%d\n",r);
+	if(r==0)
+		printf("%s is the substring of %s\n",argv[1],argv[2]);
+	else
+		printf("%s is not a substring of %s\n",argv[1],argv[2]);
 }
