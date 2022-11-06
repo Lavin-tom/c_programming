@@ -1,4 +1,6 @@
 //sudoku 
+//not yet completed
+
 #include<stdio.h>
 void print_sudoku(int sudoku[9][9]);
 void solve_sudoku(int sudoku[][9]);
@@ -113,8 +115,16 @@ void print_sudoku(int sudoku[][9])
 {
 	for(int i=0;i<9;i++)
 	{
-		for(int j=0;j<9;j++)
+		 if(i==3 || i==6)
+                        printf("- - - - - - - - - - -\n");
+		
+		 for(int j=0;j<9;j++)
+		{
+			if(j==3 || j==6)
+				printf("| ");
+			
 			printf("%d ",sudoku[i][j]);
+		}
 		printf("\n");
 	}
 	printf("\n");
