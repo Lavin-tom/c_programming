@@ -3,7 +3,7 @@
 
 #include<stdio.h>
 void print_sudoku(int sudoku[9][9]);
-void solve_sudoku(int sudoku[][9]);
+void solve_sudoku(int sudoku[][9],int c[][9]);
 int same_row(int sudoku[][9],int,int,int);
 int same_column(int sudoku[][9],int,int,int);
 int same_square(int sudoku[][9],int,int,int);
@@ -18,33 +18,55 @@ int main()
 			  0,6,0,0,0,0,2,8,0,
 			  0,0,0,4,1,9,0,0,5,
 			  0,0,0,0,8,0,0,7,9};
-
+	int c[9][9]={0};
+	printf("\tpuzzle\n\n");
 	print_sudoku(sudoku);
-	solve_sudoku(sudoku);
+	solve_sudoku(sudoku,c);
+	printf("\tsolution\n\n");
 	print_sudoku(sudoku);
+	for(int i=0;i<9;i++)
+	{
+		for(int j=0;j<9;j++)
+		{
+			printf("%d ",c[i][j]);
+		}
+		printf("\n");
+	}
 	
 }
-void solve_sudoku(int sudoku[][9])
+void solve_sudoku(int sudoku[][9],int c[][9])
 {
-	int ss,sr,sc;
+	int ss,sr,sc,k;
 	for(int i=0;i<9;i++)
 	{
 		for(int j=0;j<9;j++)
 		{
 			if(sudoku[i][j]==0)
 			{
+				//c[k]=j;
+				//k++;	
+				c[i][j]=1;	
 				for(int num=1;num<=9;num++)
 				{
-					if(ss=same_square(sudoku,i,j,num))
+					//if(ss=same_square(sudoku,i,j,num))
+					//{
+					//	if(sr=same_row(sudoku,i,j,num))
+					//	{
+					//		if(sc=same_column(sudoku,i,j,num))
+					//			sudoku[i][j]=num;
+					//	}
+					//}
+					ss=same_square(sudoku,i,j,num);
+					sr=same_row(sudoku,i,j,num);
+					sc=same_column(sudoku,i,j,num);
+					if(ss && sr && sc)
+						sudoku[i][j]=num;
+					else
 					{
-						if(sr=same_row(sudoku,i,j,num))
-						{
-							if(sc=same_column(sudoku,i,j,num))
-								sudoku[i][j]=num;
-						}
-					}
-					//if(ss && sr && sc)
-					//	sudoku[i][j]=num;	
+						num_t=sudoku[k][l];
+						for(m=num_t;m<=9;m++)
+							solve_sudoku(k,l,m);
+					}	
 				}
 			}
 		}
