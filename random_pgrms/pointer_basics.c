@@ -7,5 +7,5 @@ int main()
 	p=&i;
 	printf("p:%u\n",p);
 	printf("*p:%d\n",*p);
-	printf("%d\n",sizeof(*p));
+	printf("size of: %d\n",sizeof(*p));
 }
