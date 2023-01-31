@@ -28,7 +28,7 @@ void display(int arr[],int n)
 void merge(int arr[],int l,int m,int r)
 {
 	//merge two sub array
-	//fisrt sub array is arr[l..m]
+	//first sub array is arr[l..m]
 	//second subarray is arr[m+1..r]
 	int i,j,k;
 	int n1=m-l+1;
