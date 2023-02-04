@@ -4,18 +4,18 @@
 #include<stdlib.h>
 int main()
 {
-	int n,m,temp;
-	srand(getpid());
+	int n,m,temp,j;
 	printf("enter the size of the array\n");
 	scanf("%d",&n);
 	int a[n];
-
+	
+	printf("enter array elements\n");
 	for(int i=0;i<n;i++)
-	scanf("%d",&a[i]);	
+		scanf("%d",&a[i]);	
 
 	printf("Array before sorting\n");
 	for(int i=0;i<n;i++)
-	printf("%d ",a[i]);
+		printf("%d ",a[i]);
 
 	//insertion sorting
 	for(int i=1;i<n;i++)
@@ -32,7 +32,6 @@ int main()
 	//printing array after sorting
 	printf("\nAfter sorting\n");
 	for(int i=0;i<n;i++)
-	{
 		printf("%d ",a[i]);
-	}
+	printf("\n");
 }

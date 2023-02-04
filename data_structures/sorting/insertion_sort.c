@@ -7,7 +7,7 @@
 int random_();
 int main()
 {
-	int n,m,temp;
+	int n,m,temp,j;
 	srand(getpid());
 	printf("enter the size of the array\n");
 	scanf("%d",&n);
@@ -21,26 +21,26 @@ int main()
 	
 	printf("Array before sorting\n");
 	for(int i=0;i<n;i++)
-	printf("%d ",a[i]);
+		printf("%d ",a[i]);
 
-	//sorting
-	for(int i=1;i<10;i++)
+	// insertion sorting
+	for(int i=1; i<n; i++)
 	{
 		temp=a[i];
 		j=i-1;
 		while(j>=0 && a[j] >temp)
 		{
 			a[j+1]=a[j];
-			j=j--;
+			j--;
 		}
 		a[j+1]=temp;
 	}
 	//printing array after sorting
 	printf("\nAfter sorting\n");
 	for(int i=0;i<n;i++)
-	{
 		printf("%d ",a[i]);
-	}
+	printf("\n");
+
 }
 //random generation of array elements
 int random_()
