@@ -1,6 +1,7 @@
 // File 1: main.c
 
 #include <stdio.h>
+#include "extern_storage_second.c"
 
 // Declare global variable count
 extern int count;
