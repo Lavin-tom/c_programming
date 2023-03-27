@@ -2,7 +2,7 @@
 //load time input questions
 
 #include<stdio.h>
-int main(int argc,char *argv[])
+int main(int argc,char *argv[]) //./a.out a c b 
 {
 	printf("argc is %d\n",argc); //argc gives total no of argument including executable file a.out
 	printf("argv is %s\n",argv[2]); //by default cmnd line argument take all as string
