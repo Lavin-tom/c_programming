@@ -1,5 +1,4 @@
 //factorial using recursion
-
 #include<stdio.h>
 int factorial(int,int);
 int main()
@@ -7,15 +6,15 @@ int main()
 	int n,res=0,fact=1;
 	printf("enter the no\n");
 	scanf("%d",&n);
-	res=factorial(n,fact);
+	res=factorial(n,fact);					
 	printf("factorial of %d is %d\n",n,res);
 }
-int factorial(int a,int fact)
+int factorial(int n,int fact) 			
 {
-	if(a==1)
+	if(n==1)
 		return fact;
 	else
-		fact=fact*a;
+		fact=fact*n;
 	
-	factorial(a-1,fact);
+	factorial(n-1,fact);
 }

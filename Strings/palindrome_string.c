@@ -28,7 +28,7 @@ int string_length (char *a)
 	for(i=0;a[i];i++);
 	return i;
 }
-//function for reverese the string 
+//function for reverse the string 
 int reverse_string(char *a,int length)
 {
 	int i,j;
