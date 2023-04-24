@@ -11,7 +11,7 @@ $ gcc program.c -o program
 $ ./program
 ```
 
-## Search this repository with a ***Keyword***
+## Search this repository with a *Keyword*
 
 To search for a specific keyword in this repository, click on the following link:
 
@@ -38,7 +38,7 @@ For each topic, there are one or more programs that demonstrate the key concepts
 | [Coding challenge](https://github.com/Lavin-tom/c_programming/tree/master/coding_challenge) | various coding challenge questions in c||
 | [Condition compilation](https://github.com/Lavin-tom/c_programming/tree/master/conditional_compilation) | `#if` `#else` `#ifdef` `#ifndef` `#endif`||
 | [Control statement](https://github.com/Lavin-tom/c_programming/tree/master/control_statement) | `do while` `goto` `pattern programs` `switch case`||
-| [Data structure](https://github.com/Lavin-tom/c_programming/tree/master/data_structures) | ***Linked list***<br> `circular linked list` `doubly linked list` `singly linked list`<br>  ***Queue***<br> `circular queue` `double ended queue` `priority queue`<br>***Sorting***<br> `bubble sort` `insertion sort` `merge sort` `quick sort` `selection sort`<br> ***Stack***<br>`stack linked list` `balanced parathesis` <br> ***Tree***<br> `binary tree` `binary serach tree` ||
+| [Data structure](https://github.com/Lavin-tom/c_programming/tree/master/data_structures) | *Linked list*<br> `circular linked list` `doubly linked list` `singly linked list`<br>  *Queue*<br> `circular queue` `double ended queue` `priority queue`<br>*Sorting*<br> `bubble sort` `insertion sort` `merge sort` `quick sort` `selection sort`<br> *Stack*<br>`stack linked list` `balanced parathesis` <br> *Tree*<br> `binary tree` `binary serach tree` ||
 | [Dynamic memory allocation](https://github.com/Lavin-tom/c_programming/tree/master/dynamic_memory_allocation) | `malloc` `calloc` `realloc` `free`||
 | [Enum](https://github.com/Lavin-tom/c_programming/tree/master/enum) | Demonstrates the use of `enum`||
 | [Files](https://github.com/Lavin-tom/c_programming/tree/master/files) |`fgetc` `fgets` `fopen` `fprintf` `fputc` `fputs` `fscanf` `fseek` `ftell`||

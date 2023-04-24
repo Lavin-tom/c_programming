@@ -19,7 +19,7 @@ int main()
 	for(int i=1;i<=count;i++)
 	{
 		//predefined function for random no generation
-		n=rand()%end+1;
+		n=rand()%end+start;
 		printf("%d Random no generated: %d\n",i,n);
 	}
 }
