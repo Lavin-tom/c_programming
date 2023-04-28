@@ -1,3 +1,4 @@
+# Private
 //scan and print array
 #include<stdio.h>
 int main()
