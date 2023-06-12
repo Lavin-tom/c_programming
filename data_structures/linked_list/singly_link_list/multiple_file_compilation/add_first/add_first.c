@@ -4,7 +4,7 @@
 
 struct student *add_first(struct student *ptr)
 {
-	struct student *newnode=NULL,*temp=NULL;
+	struct student *newnode=NULL;
 	newnode=(struct student*)calloc(1,sizeof(struct student));
 	if(newnode==NULL)
 	{
@@ -16,13 +16,10 @@ struct student *add_first(struct student *ptr)
 		scanf("%d",&newnode->data);
 
 		if(ptr==NULL)
-		{
 			ptr=newnode;
-		}
 		else
 		{
-			temp=ptr;
-			newnode->link=temp;
+			newnode->link=ptr;
 			ptr=newnode;
 
 		}
