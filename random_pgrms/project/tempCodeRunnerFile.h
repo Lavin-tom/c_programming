@@ -1,0 +1,1 @@
+char defPassword[6] = "12345";
